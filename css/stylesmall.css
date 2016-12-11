@@ -1,0 +1,107 @@
+* {
+	-webkit-text-size-adjust: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+/* html,
+body {
+	margin: 0px auto;
+	padding: 0px;
+	
+	background-color: #333333;
+}
+
+body {
+	position: absolute;
+	
+	display: -webkit-box;
+	-webkit-box-pack: center;
+	-webkit-box-align: center;
+	
+	width: 100%;
+	height: 100%;
+} */
+
+.Logo {
+	position: relative;
+	
+	margin: 0px auto;
+	
+	width: 200px;
+	height: 200px;
+	
+	-webkit-backface-visibility: hidden;
+}
+
+.Shadow,
+.Rings,
+.Bevel,
+.ColorContainer,
+.Color {
+	position: absolute;
+	
+	left: 0px;
+	right: 0px;
+	top: 0px;
+	bottom: 0px;
+}
+
+.Shadow {
+	content: url("https://aurae.io/wp-content/uploads/2016/12/mask_60x60.svg");
+	
+	-webkit-filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.5));
+}
+
+.Rings {
+	-webkit-mask-image: url("https://aurae.io/wp-content/uploads/2016/12/mask_60x60.svg");
+}
+
+.ColorContainer {
+	-webkit-animation-name: spin;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-play-state: paused;
+}
+
+.Color {
+	background-image: -webkit-linear-gradient(top,#FF33CC 10%,#0099FF 90%);
+
+	-webkit-animation-name: spin;
+	-webkit-animation-timing-function: cubic-bezier(0.5,0.2,0.5,0.8);
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-duration: 6s;
+	-webkit-animation-play-state: running;
+}
+
+.Bevel {
+	background-image: url("https://aurae.io/wp-content/uploads/2016/12/bevel_60x60.png");
+	background-size: 100% 100%;
+}
+
+.Touch .Logo:active .ColorContainer {
+	-webkit-animation-play-state: running;
+}
+
+.Touch .Logo:active .Color {
+	-webkit-animation-play-state: paused;
+}
+
+.NoTouch .Logo:hover .ColorContainer {
+	-webkit-animation-play-state: running;
+}
+
+.NoTouch .Logo:hover .Color {
+	-webkit-animation-play-state: paused;
+}
+
+@-webkit-keyframes spin {
+	0% {
+		-webkit-transform: rotateZ(0deg);
+	} 100% {
+		-webkit-transform: rotateZ(360deg);
+	}
+}
